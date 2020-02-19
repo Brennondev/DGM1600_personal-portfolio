@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 2rem;
@@ -33,13 +38,16 @@ a {
   background-color: crimson;
   width: 100%;
   margin: 0px;
-  box-shadow: rgba(0, 0, 0, 0.4);
 }
 
 .nav-list {
   display: flex;
   list-style: none;
   margin-right: 2rem;
+}
+
+.nav-list a:hover {
+    background: rgba(0, 0, 0, 0.4);
 }
 
 #navbar a {
@@ -71,7 +79,6 @@ figcaption {
 
 #contacts {
   justify-content: space-evenly;
-  
 }
 
 #contact-links {
@@ -85,9 +92,28 @@ figcaption {
 
 footer {
   display: flex;
-  height: 6rem;
+  height: 4rem;
+  font-size: 1rem;
   background-color: darkcyan;
   color: #fff;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
 }
