@@ -1,9 +1,28 @@
+:root {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
 body {
-  background-color: darkgray;
+  background-color: #dfdfdf;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a > img {
+  height: 18rem;
+  margin: 4px;
+}
+
+button {
+background-color: #bdbdbd;
+font-size: 2rem;
+border-radius: 7px;
+padding: 4px;
 }
 
 h1 {
   color: darkblue
 }
+

@@ -1,30 +1,51 @@
 import { films } from "../data/films.js";
 import { people } from "../data/people.js";
-import { starships } from "../data/starships.js"
+import { starships } from "../data/starships.js";
 
-const greetingDiv = document.querySelector(".greeting");
+const greetingDiv = document.querySelector(".greeting")
+const maleButton = document.querySelector('#maleButton')
+const femaleButton = document.querySelector('#femaleButton')
+const otherButton = document.querySelector('#otherButton')
 
-const castList = document.createElement("ul");
+const maleCharacters = people.filter(person => person.gender === "male")
+console.log(maleCharacters)
 
-let counter = 1
+const femaleCharacters = people.filter(person => person.gender === "female")
+console.log(femaleCharacters)
+
+const otherCharacters = people.filter(person => {
+    if (person.gender === "hermaphrodite" || person.gender === "n/a"){
+        return person
+    }
+})
+
+let counter = 1;
 
 people.forEach(person => {
-  let listItem = document.createElement("li");
-  listItem1.textContent = person.name;
-  castList.appendChild(listItem);
 
-  let anchorWrap = document.createElement("a")
-  anchorWrap.href = "#"
+  let anchorWrap = document.createElement("a");
+  anchorWrap.href = "#";
 
-  let imageItem = document.createElement("img")
-  imageItem.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`
+  let imageItem = document.createElement("img");
+  imageItem.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`;
 
-  imageItem.addEventListener("click", (event) => {
-      console.log(event)
-  })
-  anchorWrap.appendChild(imageItem)
-  greetingDiv.appendChild(castList)
-  counter++
+  imageItem.addEventListener("error", event => {
+    //console.log(`${event.type}: Loading image\n`)
+    //console.log(event)
+    imageItem.hidden = true;
+    //imageItem.src = '../Images/uvu_logo.png'
+  });
+
+  imageItem.addEventListener("click", event => {
+    console.log(event);
+  });
+  anchorWrap.appendChild(imageItem);
+  greetingDiv.appendChild(anchorWrap);
+  counter++;
 });
+
+maleButton.addEventListener("click", (event) => {
+    console.log("Clicked on maleButton")
+})
 
 greetingDiv.appendChild(castList);
