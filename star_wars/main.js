@@ -1,15 +1,22 @@
-import { films } from '../data/films.js'
+import { films } from "../data/films.js";
+import { people } from "../data/people.js";
+import { starships } from "../data/starships.js"
 
-console.log('Hi there! Welcome to my page!')
+const greetingDiv = document.querySelector(".greeting");
 
-//console.log(document.querySelector(".greeting"))
+const castList = document.createElement("ul");
 
-const greetingDiv = document.querySelector(".greeting")
+let counter = 1
 
-greetingDiv.textContent = 'I just inserted text into a DOM element using my mad JavaScript skills'
+people.forEach(person => {
+  let listItem = document.createElement("li");
+  listItem1.textContent = person.name;
+  castList.appendChild(listItem);
 
-console.log(greetingDiv.textContent)
+  let imageItem = document.createElement("img")
+  imageItem.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`
+  greetingDiv.appendChild(castList)
+  counter++
+});
 
-console.log(films)
-
-greetingDiv.textContent = films[0].opening_crawl
+greetingDiv.appendChild(castList);
