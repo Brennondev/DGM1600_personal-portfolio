@@ -13,8 +13,16 @@ people.forEach(person => {
   listItem1.textContent = person.name;
   castList.appendChild(listItem);
 
+  let anchorWrap = document.createElement("a")
+  anchorWrap.href = "#"
+
   let imageItem = document.createElement("img")
   imageItem.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`
+
+  imageItem.addEventListener("click", (event) => {
+      console.log(event)
+  })
+  anchorWrap.appendChild(imageItem)
   greetingDiv.appendChild(castList)
   counter++
 });
