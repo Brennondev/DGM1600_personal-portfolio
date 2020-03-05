@@ -6,7 +6,7 @@
 body {
   background-color: #dfdfdf;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 a > img {
@@ -17,13 +17,12 @@ a > img {
 }
 
 button {
-background-color: #bdbdbd;
-font-size: 2rem;
-border-radius: 7px;
-padding: 4px;
+  background-color: #bdbdbd;
+  font-size: 2rem;
+  border-radius: 7px;
+  padding: 4px;
 }
 
 h1 {
-  color: darkblue
+  color: darkblue;
 }
-

@@ -2,7 +2,7 @@ import { films } from "../data/films.js";
 import { people } from "../data/people.js";
 import { starships } from "../data/starships.js";
 
-const greetingDiv = document.querySelector(".greeting");
+const gallery = document.querySelector(".gallery");
 const maleButton = document.querySelector("#maleButton");
 const femaleButton = document.querySelector("#femaleButton");
 const otherButton = document.querySelector("#otherButton");
@@ -16,10 +16,6 @@ const otherCharacters = people.filter(person => {
     return person;
   }
 });
-
-/*console.log(maleCharacters.length);
-console.log(femaleCharacters.length);
-console.log(otherCharacters.length);*/
 
 maleButton.addEventListener("click", event => {
   populateDOM(people.filter(person => person.gender === "male"));
@@ -44,9 +40,15 @@ function getCharNum(url) {
   return url.slice(start, end);
 }
 
-//getCharNum("https://swapi.co/api/people/1/")
+function removeChildren(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
 
 function populateDOM(characters) {
+  removeChildren(gallery)
   characters.forEach(person => {
     //need to extract the number from the person.url property
     let charNum = getCharNum(person.url);
@@ -67,7 +69,7 @@ function populateDOM(characters) {
       console.log(event);
     });
     anchorWrap.appendChild(imageItem);
-    greetingDiv.appendChild(anchorWrap);
+    gallery.appendChild(anchorWrap);
   });
 }
 
