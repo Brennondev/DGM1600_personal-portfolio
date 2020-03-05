@@ -1,6 +1,6 @@
-import { films } from "../data/films.js";
+
 import { people } from "../data/people.js";
-import { starships } from "../data/starships.js";
+
 
 const gallery = document.querySelector(".gallery");
 const maleButton = document.querySelector("#maleButton");
