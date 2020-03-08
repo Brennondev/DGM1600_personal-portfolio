@@ -1,14 +1,16 @@
 :root {
     box-sizing: border-box;
+    --main-blue: blue;
 }
 
 a {
     text-decoration: none;
     font-size: 1.25rem;
+    color: var(--main-blue);
 }
 
 a:visited {
-    color: blue;
+    color: var(--main-blue);
 }
 
 li {
@@ -25,5 +27,5 @@ li {
 }
 
 .main {
-
+background-color: darkgray;
 }
