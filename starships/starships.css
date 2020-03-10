@@ -4,6 +4,16 @@
     background-color: darkgray;
 }
 
+header, footer {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     font-size: 1.25rem;

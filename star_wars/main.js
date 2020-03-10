@@ -1,6 +1,6 @@
 
 import { people } from "../data/people.js";
-
+import { getLastNum, removeChildren } from "../scripts/utils.js"
 
 const gallery = document.querySelector(".gallery");
 const maleButton = document.querySelector("#maleButton");
@@ -29,29 +29,12 @@ otherButton.addEventListener("click", event => {
   populateDOM(otherCharacters);
 });
 
-//"url": "https://swapi.co/api/people/10/"
-
-function getCharNum(url) {
-  let end = url.lastIndexOf("/");
-  let start = end - 2;
-  if (url.charAt(start) === "/") {
-    start++;
-  }
-  return url.slice(start, end);
-}
-
-function removeChildren(element) {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
-}
-
 
 function populateDOM(characters) {
   removeChildren(gallery)
   characters.forEach(person => {
     //need to extract the number from the person.url property
-    let charNum = getCharNum(person.url);
+    let charNum = getLastNum(person.url);
     let anchorWrap = document.createElement("a");
     anchorWrap.href = "#";
 
