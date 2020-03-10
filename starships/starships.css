@@ -1,6 +1,7 @@
 :root {
     box-sizing: border-box;
     --main-blue: blue;
+    background-color: darkgray;
 }
 
 a {
@@ -27,5 +28,6 @@ li {
 }
 
 .main {
-background-color: darkgray;
+padding-left: 1rem;
+color: black;
 }

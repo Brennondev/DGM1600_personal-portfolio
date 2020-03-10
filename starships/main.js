@@ -9,6 +9,7 @@ function populateNav(characters) {
     let anchorWrap = document.createElement("a");
     anchorWrap.href = "#";
     anchorWrap.addEventListener("click", event => {
+      let shipName = event.target.textContent
       console.log(event);
     });
 
