@@ -1,6 +1,5 @@
-
 import { people } from "../data/people.js";
-import { getLastNum, removeChildren } from "../scripts/utils.js"
+import { getLastNum, removeChildren } from "../scripts/utils.js";
 
 const gallery = document.querySelector(".gallery");
 const maleButton = document.querySelector("#maleButton");
@@ -29,11 +28,9 @@ otherButton.addEventListener("click", event => {
   populateDOM(otherCharacters);
 });
 
-
 function populateDOM(characters) {
-  removeChildren(gallery)
+  removeChildren(gallery);
   characters.forEach(person => {
-    //need to extract the number from the person.url property
     let charNum = getLastNum(person.url);
     let anchorWrap = document.createElement("a");
     anchorWrap.href = "#";
@@ -42,10 +39,7 @@ function populateDOM(characters) {
     imageItem.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`;
 
     imageItem.addEventListener("error", event => {
-      //console.log(`${event.type}: Loading image\n`)
-      //console.log(event)
       imageItem.hidden = true;
-      //imageItem.src = '../Images/uvu_logo.png'
     });
 
     imageItem.addEventListener("click", event => {
