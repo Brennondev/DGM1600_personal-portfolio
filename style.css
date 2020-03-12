@@ -78,6 +78,8 @@ a:visited {
 #project-list {
   display: flex;
   justify-content: space-evenly;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 figure > img {
