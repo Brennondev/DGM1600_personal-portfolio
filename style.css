@@ -4,12 +4,12 @@
 }
 
 :root {
-    --main-red:#cb231c;
+  --main-red: #cb231c;
 }
 
 html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -36,8 +36,8 @@ a {
 }
 
 a:visited {
-    color:var(--main-red);
-  }
+  color: var(--main-red);
+}
 
 #navbar {
   display: flex;
@@ -55,13 +55,13 @@ a:visited {
 }
 
 .nav-list a:hover {
-    background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 #navbar a {
   display: block;
   font-size: 2.2rem;
-  padding: 2rem;
+  padding: 1.5rem;
   color: antiquewhite;
 }
 
@@ -72,7 +72,13 @@ a:visited {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #888;
+  background-image: linear-gradient(
+    to bottom right,
+    #072fc2,
+    #785aa2,
+    #ec6322,
+    #fbe936
+  );
 }
 
 #project-list {
@@ -83,9 +89,9 @@ a:visited {
 }
 
 figure > img {
-    max-height: 20em;
-    max-width: 20em;
-    border-radius: 5%;
+  max-height: 20em;
+  max-width: 20em;
+  border-radius: 5%;
 }
 
 figcaption {
