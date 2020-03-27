@@ -1,6 +1,5 @@
 :root {
   box-sizing: border-box;
-  display: flex;
   --main-gray: #bdbdbd;
 }
 
@@ -8,6 +7,9 @@ body {
   background-color: var(--main-gray);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 a > img {
