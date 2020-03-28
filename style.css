@@ -101,15 +101,16 @@ img {
 
 figcaption {
   text-align: center;
-  max-width: 200px;
+  max-width: 13rem;
   position: relative;
+  top: -0.5rem;
   font-size: 60%;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 #contacts {
   justify-content: space-evenly;
-  background-color: dfdfdf;
+  background-color: #dfdfdf;
 }
 
 #contact-links {
@@ -119,7 +120,6 @@ figcaption {
   margin: 6rem;
   width: 75%;
   flex-wrap: wrap;
-  
 }
 
 footer {
