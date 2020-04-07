@@ -7,11 +7,18 @@ p {
   font-size: 1rem;
 }
 
+.pokemonGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 2px;
+}
+
 .scene {
   width: 200px;
   height: 260px;
   border: 1px solid #CCC;
-  margin: 40px 0;
+  margin: 10px 0;
   perspective: 600px;
 }
 
