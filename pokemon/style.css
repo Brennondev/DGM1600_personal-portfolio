@@ -7,6 +7,10 @@ p {
   font-size: 1rem;
 }
 
+img {
+  max-width: 95%;
+}
+
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +21,8 @@ p {
 .scene {
   width: 200px;
   height: 260px;
-  border: 1px solid #CCC;
   margin: 10px 0;
+  padding-left: 1rem;
   perspective: 600px;
 }
 
