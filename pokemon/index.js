@@ -1,4 +1,4 @@
-const allPokemon = []
+/* const allPokemon = []
 
 function getPokeData(url) {
   fetch(url).then(function(response) {
@@ -13,25 +13,37 @@ function getPokeData(url) {
       });
     });
   });
+} */
+
+async function getAPIData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
+
+getAPIData("https://pokeapi.co/api/v2/pokemon/?&limit=25").then((data) => {
+  for (const pokemon of data.results) {
+    getAPIData(pokemon.url).then((pokeData) => {
+      populatePokeCards(pokeData);
+    });
+  }
+});
 
 let pokemonGrid = document.querySelector(".pokemonGrid");
 
-getPokeData("https://pokeapi.co/api/v2/pokemon?&limit=25");
-
-console.log(allPokemon)
-
-populatePokeCards(allPokemon)
-
 function populatePokeCards(pokeArray) {
-  pokeArray.forEach(pokemon => {
+  pokeArray.forEach((pokemon) => {
     let pokeScene = document.createElement("div");
     pokeScene.className = "scene";
     let pokeCard = document.createElement("div");
     pokeScene.className = "card";
     pokecard.addEventListener("click", () =>
-      pokecard.classList.toggle("is-flipped")
-    );
+      pokecard.classList.toggle("is-flipped"),
+    )
     let pokeFront = document.createElement("div");
     pokeScene.className = "card__face card__face--front";
     pokeFront.textContent = pokemon.name;
@@ -43,26 +55,30 @@ function populatePokeCards(pokeArray) {
     pokeCard.appendChild(pokeBack);
     pokeScene.appendChild(pokeCard);
     pokemonGrid.appendChild(pokeScene);
-  });
+  }
+
+function populateCardFront(pokemon) {
+  let cardFront = document.createElement('div')
+  cardFront.className = 'card__face card__face--front'
+  cardFront.textContent = pokemon.name
+  let frontImage = document.createElement('img')
+  frontImage.srce = `../images/${pokemon.id}.png`
+  cardFront.appendChild(frontImage)
+  return cardFront
 }
 
-/* var card = document.querySelector(".card");
-card.addEventListener("click", function() {
-  card.classList.toggle("is-flipped");
-}) */
+function populateCardBack(pokemon) {
+  let cardBack = document.createElement('div')
+  cardBack.className = 'card__face card__face--back'
+  cardBack.textContent = `${pokemon.ablilites}`
+  let abilityList = document.createElement('ul')
+  pokemon.ablilites.forEach(ablility =>{
+   let abilityName = document.createElement('li')
+   abilityName.textContent = ablility.ability.name
+   abilityList.appendChild(abilityName)
+  })
+  cardBack.appendChild(abilityList)
+  return cardBack
+}
 
-/* <div class="scene">
-  <div class="card">
-    <div class="card__face card__face--front">
-      <figure>
-        <img src="../Images/PokemonLogo.png" />
-        <figcaption>Bulbasaur</figcaption>
-      </figure>
-    </div>
-    <div class="card__face card__face--back">
-      <div>
-        <p>Pokemon attributes</p>
-      </div>
-    </div>
-  </div>
-</div> */
+// https://github.com/fanzeyi/pokemon.json/blob/master/images/001.png?raw=true

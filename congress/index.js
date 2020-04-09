@@ -61,6 +61,8 @@ const mostLoyal = getSimplifiedSenators(republicans).reduce((acc, senator) => {
 });
 
 
-console.log(loyalArray);
+console.log(loyalArray),
+console.log(mostSeniority)
 
-populateSenatorDiv(getSimplifiedSenators(senators));
+populateSenatorDiv(getSimplifiedSenators(senators))
+populateSenatorDiv(getSimplifiedSenators(republicans))
