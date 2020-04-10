@@ -1,5 +1,8 @@
 body { 
-    background-color: aqua;
+  background-image: url('/Images/Pokemon-X-and-Y-battle-background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
     font-family: sans-serif; 
 }
 
@@ -24,6 +27,7 @@ img {
   margin: 10px 0;
   padding-left: 1rem;
   perspective: 600px;
+  border-radius: 5%;
 }
 
 .card {
@@ -51,7 +55,7 @@ img {
 }
 
 .card__face--front {
-  background: red;
+  background-image: linear-gradient(red, blue);
 }
 
 .card__face--back {
