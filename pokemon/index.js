@@ -23,10 +23,12 @@ let startButton = document.querySelector("#startButton");
 let newButton = document.querySelector("#newButton");
 
 startButton.addEventListener("click", () => {
-  //butt
+  loadPage()
 });
 
-//new@
+newButton.addEventListener('click', () => {
+  addPokemon()
+})
 
 function populatePokeCard(singlePokemon) {
   let pokeScene = document.createElement("div");
