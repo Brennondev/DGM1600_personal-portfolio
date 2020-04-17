@@ -1,10 +1,49 @@
-.senators {
+body {
+  background-color: #5e5e5e;
+  font-style: italic;
+}
+
+header{
+  text-align: center;
+}
+
+.senatorGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
+figure {
+  margin: .5rem;
+}
+
 img {
   border-radius: 4px;
   box-shadow: 0 5px 4px rgba(0, 0, 0, 0.8);
+}
+
+figcaption {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-democrat {
+  color: blue;
+}
+
+.fa-republican {
+  color: red;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+.progressDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: .75rem;
 }

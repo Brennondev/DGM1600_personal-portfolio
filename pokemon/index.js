@@ -23,12 +23,12 @@ let startButton = document.querySelector("#startButton");
 let newButton = document.querySelector("#newButton");
 
 startButton.addEventListener("click", () => {
-  loadPage()
+  loadPage();
 });
 
-newButton.addEventListener('click', () => {
-  addPokemon()
-})
+newButton.addEventListener("click", () => {
+  addPokemon();
+});
 
 function populatePokeCard(singlePokemon) {
   let pokeScene = document.createElement("div");
@@ -52,20 +52,22 @@ function populateCardFront(pokemon) {
   cardFront.className = "card__face card__face--front";
   let frontImage = document.createElement("img");
   frontImage.src = `../images/${getImageFileName(pokemon)}.png`;
-  let frontLabel = document.createElement('p')
-  frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()} ${pokemon.name.slice(1)}`
+  let frontLabel = document.createElement("p");
+  frontLabel.textContent = `${pokemon.name
+    .charAt(0)
+    .toUpperCase()}${pokemon.name.slice(1)}`;
   cardFront.appendChild(frontImage);
-  cardFront.appendChild(frontLabel)
+  cardFront.appendChild(frontLabel);
   return cardFront;
 }
 
 function getImageFileName(pokemon) {
   if (pokemon.id < 10) {
-    return `00$(pokemon.id)`;
+    return `00${pokemon.id}`;
   } else if (pokemon.id > 9 && pokemon.id < 100) {
-    return `0$(pokemon.id)`;
+    return `0${pokemon.id}`;
   } else if (pokemon.id > 809) {
-    return `pokeball`
+    return `pokeball`;
   }
 }
 
@@ -88,7 +90,7 @@ class Pokemon {
     this.weight = weight;
     this.name = name;
     this.abilities = abilities;
-    this.id = 900
+    this.id = 900;
   }
 }
 
@@ -96,7 +98,7 @@ function addPokemon() {
   let Brennonmon = new Pokemon(
     190,
     200,
-    "Brennonmon"[
+    "brennonmon"[
       ({
         ability: {
           name: "Over Explain",
