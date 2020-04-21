@@ -51,7 +51,7 @@ function populateCardFront(pokemon) {
   let cardFront = document.createElement("div");
   cardFront.className = "card__face card__face--front";
   let frontImage = document.createElement("img");
-  frontImage.src = `../images/${getImageFileName(pokemon)}.png`;
+  frontImage.src = `../images/pokemonImages/${getImageFileName(pokemon)}.png`;
   let frontLabel = document.createElement("p");
   frontLabel.textContent = `${pokemon.name
     .charAt(0)
@@ -95,21 +95,17 @@ class Pokemon {
 }
 
 function addPokemon() {
-  let Brennonmon = new Pokemon(
-    190,
-    200,
-    "brennonmon"[
-      ({
-        ability: {
-          name: "Over Explain",
-        },
+  let Brennonmon = new Pokemon(190, 200, "brennonmon", [
+    ({
+      ability: {
+        name: "Over Explain",
       },
-      {
-        ability: {
-          name: "Delicious Cook",
-        },
-      })
-    ]
-  );
+    },
+    {
+      ability: {
+        name: "Delicious Cook",
+      },
+    }),
+  ]);
   populatePokeCard(Brennonmon);
 }
