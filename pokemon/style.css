@@ -11,6 +11,7 @@ p {
 }
 
 img {
+  margin-top: .5rem;
   max-width: 95%;
 }
 
