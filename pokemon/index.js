@@ -27,7 +27,12 @@ startButton.addEventListener("click", () => {
 });
 
 newButton.addEventListener("click", () => {
-  addPokemon();
+  let newCardCoords = addPokemon();
+  window.scrollTo({
+    top: newCardCoords.top,
+    left: newCardCoords.left,
+    behavior: 'smooth',
+  })
 });
 
 function populatePokeCard(singlePokemon) {
@@ -44,7 +49,8 @@ function populatePokeCard(singlePokemon) {
   pokeCard.appendChild(pokeFront);
   pokeCard.appendChild(pokeBack);
   pokeScene.appendChild(pokeCard);
-  pokemonGrid.appendChild(pokeScene);
+  pokemonGrid.appendChild(pokeScene)
+  return pokeScene.getBoundingClientRect()
 }
 
 function populateCardFront(pokemon) {
@@ -65,8 +71,12 @@ function getImageFileName(pokemon) {
   if (pokemon.id < 10) {
     return `00${pokemon.id}`;
   } else if (pokemon.id > 9 && pokemon.id < 100) {
-    return `0${pokemon.id}`;
-  } else if (pokemon.id > 809) {
+    return `0${pokemon.id}`
+  }
+    else if (pokemon.id > 99 && pokemon.id < 808) {
+      return `${pokemon.id}`
+    }
+   else if (pokemon.id > 809) {
     return `pokeball`;
   }
 }
@@ -107,5 +117,5 @@ function addPokemon() {
       },
     }),
   ]);
-  populatePokeCard(Brennonmon);
+  return populatePokeCard(Brennonmon);
 }
